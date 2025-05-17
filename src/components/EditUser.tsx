@@ -56,7 +56,10 @@ const EditUser = () => {
         <SheetTitle className="mb-4">Edit User</SheetTitle>
         <SheetDescription asChild>
           <Form {...form}>
-            <form className="space-y-8">
+            <form className="space-y-8" onSubmit={form.handleSubmit(data => {
+              console.log("Form submitted:", data);
+              // Bisa ditambah fungsi submit sesuai kebutuhan
+            })}>
               <FormField
                 control={form.control}
                 name="username"
@@ -128,7 +131,11 @@ const EditUser = () => {
                   <FormItem>
                     <FormLabel>Role</FormLabel>
                     <FormControl>
-                      <Select>
+                      <Select
+                        onValueChange={field.onChange}
+                        value={field.value}
+                        defaultValue={field.value}
+                      >
                         <SelectTrigger>
                           <SelectValue placeholder="Role" />
                         </SelectTrigger>
