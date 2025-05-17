@@ -40,3 +40,4 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 packet-lock.json
+pnpm-lock.yaml
